@@ -1,8 +1,5 @@
 package com.bolsadeideas.springboot.form.app.controllers;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,9 +16,16 @@ public class FormController {
 
     @GetMapping("/form")
     public String form(Model model) {
+
         Usuario usuario = new Usuario();
+
+        usuario.setNombre("John");
+        usuario.setApellido("Doe");
+        usuario.setIdentificador("123.456.789-K");
+
         model.addAttribute("titulo", "Formulario usuarios");
         model.addAttribute("usuario", usuario);
+
         return "form";
     }
 
